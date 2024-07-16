@@ -10,14 +10,6 @@ function ItemInvoice({ invoice }) {
     const { bgColor, bgColorDot, textColor } = baseColor(status)
     const total = items.reduce((acc, item) => (item.price * item.quantity) + acc, 0)
 
-    // console.log(items.reduce((acc,item)=>(item.price*item.quantity)+acc,0));
-    // console.log(items);
-    // const bgColorDot={
-    //     paid:"bg-color-paid",
-    //     draft:"bg-color-draft",
-    //     pending:"bg-color-pending"
-    // }[status]
-
 
     return (
         <li className="bg-color-12 w-full p-7 rounded-xl mb-5 cursor-pointer dark:bg-color-4">

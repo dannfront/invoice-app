@@ -10,7 +10,8 @@ function sendResponse(req,res,user){
     const optionCookie={
         maxAge:24*60*60*1000,
         httpOnly:true,
-        secure:false
+        secure:req.secure||req.headers['x-forwarded-proto'] === 'https',
+        sameSite:"none"
     }
 
     res.cookie("jwt",token,optionCookie)

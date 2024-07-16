@@ -10,7 +10,7 @@ import InvoiceBar from "../components/InvoiceBar"
 function Home() {
     const [filter, setFilter] = useState([])
     const query = useGetInvoices()
-    console.log(typeof import.meta.env.VITE_IS_PROD);
+    
     if (query.isPending) return <Spinner />
 
     const invoices = query.data.data.invoices ?? []

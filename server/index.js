@@ -5,4 +5,5 @@ dotenv.config()
 
 connectDb(process.env.URL_DB)
 
-app.listen(3000,'localhost',()=>console.log("servidor iniciado"))
+const PORT = process.env.PORT || 3000; 
+app.listen(PORT, () => console.log(`Servidor iniciado en el puerto ${PORT}`));

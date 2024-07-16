@@ -1,7 +1,7 @@
 import app from './app.js'
 import dotenv from 'dotenv'
 import connectDb from './utils/conectionDb.js'
-dotenv.config({path:"./config.env"})
+dotenv.config()
 
 connectDb(process.env.URL_DB)
 

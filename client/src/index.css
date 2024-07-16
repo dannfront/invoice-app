@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+    font-family: "League Spartan", sans-serif;
+}
+
+
+
+.bg-paid {
+    background-color: rgb(51, 214, 159, 0.1)
+}
+
+.bg-draft {
+    background-color: rgb(55, 59, 83, 0.2)
+}
+
+.bg-pending {
+    background-color: rgb(255, 143, 0, 0.2);
+}
+
+.tx-paid {
+    @apply text-color-paid
+}
+
+.tx-draft {
+    @apply text-color-draft font-bold dark:text-color-5
+}
+
+.tx-pending {
+    @apply text-color-pending
+}
+
+.wraper-invoice-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+
+    .two {
+        grid-row: 1/3;
+        grid-column: 2;
+    }
+
+    .four {
+        grid-row: 3;
+        grid-column: 1;
+    }
+
+    @media(width >=768px) {
+        grid-template-columns: repeat(3, 1fr);
+
+
+        .two {
+            grid-row: 1;
+            grid-column: 2;
+            height: 60px;
+        }
+
+        .three {
+            grid-row: 2;
+        }
+
+        .four {
+            grid-row: 1;
+            grid-column: 3;
+        }
+    }
+
+
+}
+
+.grid-invoice-data {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    .two {
+        grid-row: 2;
+        grid-column: 1;
+    }
+
+    .three {
+        align-self: center;
+        justify-self: center;
+        grid-row: 1/span 2;
+        grid-column: 2;
+    }
+}
+
+.overlay-delete {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spinner {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 5px solid #7C5DFA;
+    border-bottom-color: transparent;
+    animation: rotate 1s linear infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg)
+    }
+}
+
+.inputs-form {
+    @apply block border border-color-5 rounded-lg p-2 font-bold focus:outline-none focus:border-color-2 focus:ring-color-1 focus:ring-1 dark:bg-color-4 dark:border-color-3 dark:text-color-12;
+}
+
+
+.p-datepicker {
+    position: absolute;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 1px;
+    /* top: 343px !important;  */
+    width: 40%;
+}
+
+.p-calendar {
+    width: 100%;
+}
+
+
+.p-datepicker {
+    min-width: 100px !important;
+    /* Ajusta el ancho del popup del calendario */
+    width: 200px !important;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+
+.p-inputtext {
+    @apply block border border-color-5 rounded-l-lg p-2 w-[85%] font-bold focus:outline-none focus:border-color-2 focus:ring-color-1 focus:ring-1 dark:bg-color-4 dark:border-color-3 dark:text-color-12;
+}
+
+.p-button {
+    @apply bg-color-1 text-white font-bold py-2 px-4 rounded-r-lg;
+}
+
+
+.checkbox-input {
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 3px;
+    width: 15px;
+    height: 15px;
+    appearance: none;
+    @apply bg-color-5 dark:bg-color-3;
+}
+
+.checkbox-input:hover {
+    border: 2px solid #7C5DFA;
+}
+
+.checkbox-input:checked {
+    background-color: #7C5DFA;
+    background-image: url("/images/icon-check.svg");
+}

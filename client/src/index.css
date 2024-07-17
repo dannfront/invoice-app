@@ -33,6 +33,20 @@ body {
     @apply text-color-pending
 }
 
+
+.background-dot-paid {
+    @apply bg-color-paid
+}
+
+.background-dot-draft {
+    @apply bg-color-draft font-bold
+}
+
+.background-dot-pending {
+    @apply bg-color-pending;
+}
+
+
 .wraper-invoice-data {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

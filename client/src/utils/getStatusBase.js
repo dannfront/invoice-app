@@ -6,7 +6,7 @@ export function baseColor(status) {
     }[status]
 
     return {
-        bgColorDot: `bg-color-${base} ${status==="draft"?"dark:bg-color-5":""}`,
+        bgColorDot: `background-dot-${base} ${status==="draft"?"dark:bg-color-5":""}`,
         bgColor: `bg-${base}`,
         textColor: `tx-${base}`,
     }

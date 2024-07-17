@@ -7,11 +7,12 @@ function Protected({children}) {
     const navigation=useNavigate()
     const [isSucces,setSucces]=useState(false)
     
+    const url=import.meta.env.VITE_IS_PROD==="false"?import.meta.env.VITE_URL_SERVER_LOCAL:import.meta.env.VITE_URL_SERVER_PRODUCTION
 
     useEffect(function(){
         async function isVerifed(){
            try {
-            const data=await axios.get('http://localhost:3000/api-invoice/v1/protect',{
+            const data=await axios.get(`${url}/protect`,{
                 withCredentials:true
             })
             
